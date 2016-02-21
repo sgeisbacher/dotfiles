@@ -1,0 +1,14 @@
+
+function getlocation () {
+    if [ -f "/etc/location.conf" ]; then
+        LOCATION=$(cat /etc/location.conf)
+        REPLY="-$LOCATION "
+    else
+        REPLY=""
+    fi
+}
+
+grml_theme_add_token location -i getlocation
+
+zstyle ':prompt:grml:left:setup' items rc change-root user at host location path vcs percent
+
