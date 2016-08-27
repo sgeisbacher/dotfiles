@@ -17,6 +17,8 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'sjl/badwolf'
 Plugin 'guns/vim-clojure-static'
 Plugin 'itchyny/lightline.vim'
+Plugin 'rodjek/vim-puppet'
+Plugin 'fatih/vim-go'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -41,6 +43,10 @@ map <F4> :NERDTreeFind<CR>
 map <leader>n :bn<cr>
 map <leader>d :bd<cr>
 map <leader>f :CtrlP<cr>
+" to be able to repeat commands for a selection (visual-mode)
+vnoremap . :normal .<CR>
+" recursive search on word under cursor
+nnoremap <leader>vv :grep! -Q '<c-r><c-w>'<cr>:cw<cr><cr>
 
 map tn :tabNext<CR>
 
@@ -62,8 +68,13 @@ set shiftwidth=4
 set expandtab
 set softtabstop=4
 
+set list
+set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
+
 " Airline
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 1
+let g:bufferline_echo = 1
 let g:airline_theme='dark'
 
 au BufRead,BufNewFile *.gradle set filetype=groovy
