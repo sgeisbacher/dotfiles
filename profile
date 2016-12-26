@@ -9,12 +9,16 @@ export DOCKER_BOOTSTRAP_HOME="/Users/stefan/nc/code/taa/docker-bootstrap"
 
 # GOLANG
 export GOROOT=/usr/local/opt/go/libexec
-export GOPATH=$HOME/.go
+export GOPATH=$HOME/private/code/go
 export PATH=$GOPATH/bin:$PATH
+alias gosrc="cd $GOPATH/src/github.com/sgeisbacher"
+gocover() { go test -v -coverprofile=/tmp/cover.out "$1" && go tool cover -html=/tmp/cover.out -o /tmp/coverage.html && open /tmp/coverage.html }
 
-# PATH 
+# PATH
+              
 GNUCOREUTILS="/usr/local/opt/coreutils/libexec/gnubin" 
-export PATH="$GNUCOREUTILS:$PATH:$GRADLE_HOME/bin"
+GNUFINDUTILS="/usr/local/opt/findutils/libexec/gnubin"
+export PATH="$GNUFINDUTILS:$GNUCOREUTILS:$PATH:$GRADLE_HOME/bin"
 export PATH="$PATH:/sbin:/usr/local/bin:$HOME/nc/bin:$HOME/bin"
 
 # ALIASES
@@ -35,13 +39,14 @@ alias xisnginx='eco11 && cd lutzgroup/xxxl-is-nginx'
 alias xisgui='eco11 && cd lutzgroup/xxxl-is-gui'
 alias xisdeploy='eco11 && cd lutzgroup/xxxl-is-deploy'
 alias xiscompose='cd $HOME/nc/code/taa/eco11-showcase'
+alias taa='cd $HOME/nc/code/taa'
 alias taadockerbootstrap='cd $HOME/nc/code/taa/docker-bootstrap'
 alias taadockerimagebuilder='cd $HOME/nc/code/taa/docker-hybris-image-builder'
 alias lutzgroup='eco11 && cd lutzgroup'
 
 alias sourcetree='open -a SourceTree'
 
-alias ant='ncant'
+#alias ant='ncant'
 
 alias vupssh='vagrant up && vagrant ssh'
 alias vdupssh='vagrant destroy -f && vupssh'
@@ -52,6 +57,7 @@ alias ssh='LANG="en_US.UTF-8" LC_CTYPE="en_US.UTF-8" LC_ALL="en_US.UTF-8" /usr/b
 
 alias d='date +%Y-%m-%d'
 
+alias jdl2='ssh -C -X 10.17.25.99 "vncviewer -p /home/pi/.vnc/passwd 127.0.0.1:1"'
 
 # FUNCTIONS
 fgrep () { find . -type f -iname "$2" -print0 | xargs -0 grep "$1" ; }
@@ -64,6 +70,7 @@ docker_destroy_all_images_forced () { docker images | taildd -n+2 | sed -r 's/\s
 docker_stop_all_containers () { docker stop $(docker ps -aq) }
 docker_stop_running_containers () { docker stop $(docker ps -q) }
 
+hybris_pod() { kubectl get pods | grep hybris-app | awk '{print $1}' }
 
 # MISC
 if ! (ssh-add -l | grep -q 'privateservers') ; then
@@ -79,3 +86,7 @@ else
 fi
 
 export TERM=xterm-256color
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
