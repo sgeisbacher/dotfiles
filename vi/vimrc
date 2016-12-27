@@ -68,8 +68,8 @@ set shiftwidth=4
 set expandtab
 set softtabstop=4
 
-set list
-set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
+"set list
+"set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 
 " Airline
 let g:airline#extensions#tabline#enabled = 1
@@ -79,5 +79,9 @@ let g:airline_theme='dark'
 
 au BufRead,BufNewFile *.gradle set filetype=groovy
 au BufRead,BufNewFile *.sls set filetype=yaml
+
+" GOLANG
+" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:go_fmt_command = "goimports"
 
 syntax on
