@@ -3,8 +3,9 @@ filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-	Plugin 'VundleVim/Vundle.vim'
-	Plugin 'tomasr/molokai'
+    Plugin 'VundleVim/Vundle.vim'
+    Plugin 'tomasr/molokai'
+    Plugin 'rking/ag.vim'
 call vundle#end()
 filetype plugin indent on
 
@@ -35,6 +36,17 @@ set incsearch          " search while typing
 set hlsearch           " highlight matches
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
+nnoremap <leader>a :Ag<SPACE>
+
+
+" MOVEMENT
+" move to beginning/end of line
+nnoremap B ^
+nnoremap E $
+" $/^ doesn't do anything
+nnoremap $ <nop>
+nnoremap ^ <nop>
+
 
 
 colorscheme molokai
