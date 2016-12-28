@@ -48,6 +48,8 @@ alias sourcetree='open -a SourceTree'
 
 #alias ant='ncant'
 
+alias man='_() { echo $1; man -M $(brew --prefix)/opt/coreutils/libexec/gnuman $1 1>/dev/null 2>&1;  if [ "$?" -eq 0 ]; then man -M $(brew --prefix)/opt/coreutils/libexec/gnuman $1; else man $1; fi }; _'
+
 alias vupssh='vagrant up && vagrant ssh'
 alias vdupssh='vagrant destroy -f && vupssh'
 
