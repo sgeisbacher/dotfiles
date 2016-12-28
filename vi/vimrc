@@ -7,6 +7,7 @@ call vundle#begin()
     Plugin 'tomasr/molokai'
     Plugin 'rking/ag.vim'
     Plugin 'kien/ctrlp.vim'
+    Plugin 'scrooloose/nerdtree'
 call vundle#end()
 filetype plugin indent on
 
@@ -54,6 +55,8 @@ nnoremap $ <nop>
 nnoremap ^ <nop>
 
 
+" CUSTOM KEYBINDINGS
+map <C-n> :NERDTreeToggle<CR>
 
 colorscheme molokai
 
