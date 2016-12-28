@@ -1,87 +1,14 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible
+filetype off
 
-colorscheme peachpuff 
-
-" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'bling/vim-airline'
-Plugin 'kien/ctrlp.vim'
-Plugin 'sjl/badwolf'
-Plugin 'guns/vim-clojure-static'
-Plugin 'itchyny/lightline.vim'
-Plugin 'rodjek/vim-puppet'
-Plugin 'fatih/vim-go'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-
-let mapleader=","
-
-cabbrev fh :CtrlP ~/<cr>
-cabbrev f  :CtrlP<cr>
-
-map <C-n> :NERDTreeToggle<CR>
-map <F4> :NERDTreeFind<CR>
-map <leader>n :bn<cr>
-map <leader>d :bd<cr>
-map <leader>f :CtrlP<cr>
-" to be able to repeat commands for a selection (visual-mode)
-vnoremap . :normal .<CR>
-" recursive search on word under cursor
-nnoremap <leader>vv :grep! -Q '<c-r><c-w>'<cr>:cw<cr><cr>
-
-map tn :tabNext<CR>
-
-" BASIC CONFIGURATION
-" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-set number
-set autoindent
-set ignorecase smartcase
-
-set laststatus=2
-
-set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
-
-set shortmess=a
-
-set tabstop=4
-set shiftwidth=4
-set expandtab
-set softtabstop=4
-
-"set list
-"set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
-
-" Airline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_buffers = 1
-let g:bufferline_echo = 1
-let g:airline_theme='dark'
-
-au BufRead,BufNewFile *.gradle set filetype=groovy
-au BufRead,BufNewFile *.sls set filetype=yaml
-
-" GOLANG
-" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:go_fmt_command = "goimports"
+	Plugin 'VundleVim/Vundle.vim'
+	Plugin 'tomasr/molokai'
+call vundle#end()
+filetype plugin indent on
 
 syntax on
+
+colorscheme molokai
+
