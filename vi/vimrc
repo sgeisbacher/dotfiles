@@ -6,6 +6,7 @@ call vundle#begin()
     Plugin 'VundleVim/Vundle.vim'
     Plugin 'tomasr/molokai'
     Plugin 'rking/ag.vim'
+    Plugin 'kien/ctrlp.vim'
 call vundle#end()
 filetype plugin indent on
 
@@ -37,6 +38,11 @@ set hlsearch           " highlight matches
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <leader>a :Ag<SPACE>
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --nocolor\ 
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    let g:ctrlp_use_caching = 0
+endif
 
 
 " MOVEMENT
