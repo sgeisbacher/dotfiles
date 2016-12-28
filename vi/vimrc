@@ -11,6 +11,10 @@ filetype plugin indent on
 syntax on
 
 
+" COMMON SETTINGS
+let mapleader=","
+
+
 " WHITESPACING
 set tabstop=4          " number of visual spaces per TAB
 set softtabstop=4      " number of spaces in tab when editing
@@ -24,6 +28,13 @@ filetype indent on     " load filetype-specific indent files
 set wildmenu           " autocomplete visual-box for command menu
 set lazyredraw         " only redraw when needed
 set showmatch          " highlight matching [{()}]
+
+
+" SEARCHING
+set incsearch          " search while typing
+set hlsearch           " highlight matches
+" turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR>
 
 
 colorscheme molokai
