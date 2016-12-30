@@ -8,6 +8,8 @@ call vundle#begin()
     Plugin 'rking/ag.vim'
     Plugin 'kien/ctrlp.vim'
     Plugin 'scrooloose/nerdtree'
+    Plugin 'Raimondi/delimitMate'
+    Plugin 'fatih/vim-go'
 call vundle#end()
 filetype plugin indent on
 
