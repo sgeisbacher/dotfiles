@@ -10,6 +10,7 @@ call vundle#begin()
     Plugin 'scrooloose/nerdtree'
     Plugin 'Raimondi/delimitMate'
     Plugin 'fatih/vim-go'
+    Plugin 'valloric/youcompleteme'
 call vundle#end()
 filetype plugin indent on
 
