@@ -65,5 +65,9 @@ map <leader>r :nohlsearch<CR>
 vmap <C-c> :w !pbcopy<CR><CR>
 
 
+" GOLANG
+let g:go_fmt_command = "goimports"
+
+
 colorscheme molokai
 
