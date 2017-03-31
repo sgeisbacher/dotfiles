@@ -91,5 +91,7 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
-colorscheme molokai
+if filereadable(expand("~/.vim/bundle/molokai/colors/molokai.vim"))
+    colorscheme molokai
+endif
 
