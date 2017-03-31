@@ -11,6 +11,7 @@ call vundle#begin()
     Plugin 'Raimondi/delimitMate'
     Plugin 'fatih/vim-go'
     Plugin 'valloric/youcompleteme'
+    Plugin 'mileszs/ack.vim'
 call vundle#end()
 filetype plugin indent on
 
@@ -49,7 +50,7 @@ if executable('ag')
     let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
     let g:ctrlp_use_caching = 0
 endif
-
+noremap <Leader>a :Ack <cword><cr>
 
 " MOVEMENT
 " move to beginning/end of line
@@ -77,6 +78,9 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 " GOLANG
 let g:go_fmt_command = "goimports"
 
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 colorscheme molokai
 
