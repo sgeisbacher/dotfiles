@@ -3,19 +3,18 @@
 # JAVA
 export JAVA_HOME=$(/usr/libexec/java_home)
 export JAVA_TOOL_OPTIONS='-Djava.awt.headless=true'
-export GRADLE_HOME="/Users/stefan/Downloads/gradle-2.5/"
+export GRADLE_HOME="/usr/local/opt/gradle-2.14.1"
 
 export DOCKER_BOOTSTRAP_HOME="/Users/stefan/nc/code/taa/docker-bootstrap"
 
 # GOLANG
 export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/private/code/go
-export PATH=$GOPATH/bin:$PATH
+export PATH=$(pyenv root)/shims:$GOPATH/bin:$PATH
 alias gosrc="cd $GOPATH/src/github.com/sgeisbacher"
 gocover() { go test -v -coverprofile=/tmp/cover.out "$1" && go tool cover -html=/tmp/cover.out -o /tmp/coverage.html && open /tmp/coverage.html }
 
 # PATH
-              
 GNUCOREUTILS="/usr/local/opt/coreutils/libexec/gnubin" 
 GNUFINDUTILS="/usr/local/opt/findutils/libexec/gnubin"
 export PATH="$GNUFINDUTILS:$GNUCOREUTILS:$PATH:$GRADLE_HOME/bin"
@@ -43,6 +42,8 @@ alias taa='cd $HOME/nc/code/taa'
 alias taadockerbootstrap='cd $HOME/nc/code/taa/docker-bootstrap'
 alias taadockerimagebuilder='cd $HOME/nc/code/taa/docker-hybris-image-builder'
 alias lutzgroup='eco11 && cd lutzgroup'
+alias java7='JAVA_HOME=$(/usr/libexec/java_home -v 1.7)'
+alias java8='JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
 
 alias sourcetree='open -a SourceTree'
 
@@ -92,3 +93,5 @@ export TERM=xterm-256color
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+export ANSIBLE_NOCOWS=1
