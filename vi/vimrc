@@ -13,6 +13,7 @@ call vundle#begin()
     Plugin 'fatih/vim-go'
     Plugin 'valloric/youcompleteme'
     Plugin 'mileszs/ack.vim'
+    Plugin 'nightsense/seabird'
 call vundle#end()
 filetype plugin indent on
 
