@@ -36,6 +36,9 @@ alias glg="glog"
 alias gco="git checkout"
 alias fdisks='fdisk -l | grep "Disk /"'
 
+alias restic_grz='restic -r sftp:root@10.17.0.233:/srv/bkp/restic/stefan/ -p ~/.restic-passwd'
+alias restic_dd='restic -r sftp:root@nas.dd:/srv/nas/fileserver/stefan/bkp/restic -p ~/.restic-passwd'
+
 
 # VAGRANT
 alias vupssh='vagrant up && vagrant ssh'
