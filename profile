@@ -35,6 +35,7 @@ alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset
 alias glg="glog"
 alias gco="git checkout"
 alias fdisks='fdisk -l | grep "Disk /"'
+alias listenports='lsof -nPi | grep -i listen'
 
 alias restic_grz='restic -r sftp:root@10.17.0.233:/srv/bkp/restic/stefan/ -p ~/.restic-passwd'
 alias restic_dd='restic -r sftp:root@nas.dd:/srv/nas/fileserver/stefan/bkp/restic -p ~/.restic-passwd'
