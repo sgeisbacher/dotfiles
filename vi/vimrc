@@ -65,6 +65,7 @@ nnoremap ^ <nop>
 
 " CUSTOM KEYBINDINGS
 map <C-n> :NERDTreeToggle<CR>
+map <leader>T :NERDTreeFind<CR>
 map <leader>r :nohlsearch<CR>
 vmap <C-c> :w !pbcopy<CR><CR>
 
