@@ -1,0 +1,69 @@
+#!/bin/bash
+
+export LC_ALL=en_US.UTF-8
+
+set -o vi
+
+fpath=(~/.zsh/completion $fpath)
+autoload -Uz compinit && compinit -i
+
+. ~/dotfiles/profile
+#. ~/dotfiles/zsh/zshrc.local.time
+. ~/dotfiles/zsh/zshrc.local.fzf-keybindings
+. ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+
+
+
+
+#  ENV_SHELL CONFIG
+
+function env_shell_prompt() {
+    REPLY=""
+    [[ "$ENV_SHELL" != "" ]] && REPLY="(env-$ENV_SHELL) - "
+}
+
+grml_theme_add_token env-shell -f env_shell_prompt '%F{red}' '%f'
+
+
+
+
+
+#  VCS CONFIG
+
+autoload -Uz vcs_info
+
+precmd() { vcs_info }
+
+function myvcs_prompt() {
+    REPLY="${vcs_info_msg_0_}"
+    REPLY=$(echo "${REPLY}" | sed "s/feature/$(printf "\xE2\x80\xA6")/g")
+}
+
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' formats '%F{magenta}[%F{green}%b%F{magenta}%u] '
+zstyle ':vcs_info:*' unstagedstr '%F{red}!%F{magenta}'
+grml_theme_add_token myvcs -f myvcs_prompt '%F{magenta}' '%f'
+
+
+
+
+
+#  PATH CONFIG
+
+function mypath_prompt() {
+    REPLY="${PWD}"
+    REPLY=$(echo "${REPLY}" | sed "s#/Users/stefan#~#g")
+    [[ ! "$REPLY" =~ starshiphsa$ ]] && REPLY=$(echo "${REPLY}" | sed "s#code/business/starshiphsa#$(printf "\xE2\x80\xA6")#g")
+}
+
+grml_theme_add_token mypath -f mypath_prompt '%B' '%f '
+
+
+
+
+
+
+# PROMPT STYLE
+
+zstyle ':prompt:grml:left:setup' items change-root env-shell host mypath rc myvcs
