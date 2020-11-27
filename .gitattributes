@@ -1,0 +1,2 @@
+profile-private filter=git-crypt diff=git-crypt
+profile-starship filter=git-crypt diff=git-crypt
