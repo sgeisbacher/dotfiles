@@ -10,6 +10,7 @@ autoload -Uz compinit && compinit -i
 . ~/dotfiles/profile
 #. ~/dotfiles/zsh/zshrc.local.time
 . ~/dotfiles/zsh/zshrc.local.fzf-keybindings
+# https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
 . ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 
