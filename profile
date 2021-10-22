@@ -18,6 +18,9 @@ export PATH=$GOROOT/bin:$PATH
 #alias gosrc="cd $GOPATH/src/github.com/sgeisbacher"
 gocover() { go test -v -coverprofile=/tmp/cover.out "$1" && go tool cover -html=/tmp/cover.out -o /tmp/coverage.html && open /tmp/coverage.html }
 
+# RUST
+source $HOME/.cargo/env
+
 # PATH
 GNUCOREUTILS="/usr/local/opt/coreutils/libexec/gnubin" 
 GNUFINDUTILS="/usr/local/opt/findutils/libexec/gnubin"
