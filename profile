@@ -12,10 +12,10 @@ alias ibrew='arch -x86_64 /usr/local/bin/brew'
 alias nvim='arch -x86_64 /usr/local/bin/nvim'
 
 # GOLANG
-export GOROOT=/usr/local/opt/go/libexec
-export GOPATH="$HOME/go"
-export PATH=$GOPATH/bin:$PATH
-alias gosrc="cd $GOPATH/src/github.com/sgeisbacher"
+export GOROOT=/usr/local/go
+#export GOPATH="$HOME/go"
+export PATH=$GOROOT/bin:$PATH
+#alias gosrc="cd $GOPATH/src/github.com/sgeisbacher"
 gocover() { go test -v -coverprofile=/tmp/cover.out "$1" && go tool cover -html=/tmp/cover.out -o /tmp/coverage.html && open /tmp/coverage.html }
 
 # PATH
