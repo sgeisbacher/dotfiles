@@ -116,13 +116,13 @@ export ANSIBLE_NOCOWS=1
 
 
 # GPG
-#[ -f ~/.gpg-agent-info ] && source ~/.gpg-agent-info
-#if [ -S "${GPG_AGENT_INFO%%:*}" ]; then
-#  export GPG_AGENT_INFO
-#else
-#  eval $( gpg-agent --daemon --write-env-file ~/.gpg-agent-info )
-#fi
+# [ -f ~/.gpg-agent-info ] && source ~/.gpg-agent-info
+# if [ -S "${GPG_AGENT_INFO%%:*}" ]; then
+#   export GPG_AGENT_INFO
+# else
+#   eval $( gpg-agent --daemon --write-env-file ~/.gpg-agent-info )
+# fi
 
-[ -f ~/.profile-private ] && source ~/.profile-private
-[ -f ~/.profile-starship ] && source ~/.profile-starship
+[ -f ~/dotfiles/profile-private ] && source ~/dotfiles/profile-private
+[ -f ~/dotfiles/profile-starship ] && source ~/dotfiles/profile-starship
 
