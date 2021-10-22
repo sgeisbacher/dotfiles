@@ -6,6 +6,11 @@
 # export GRADLE_HOME="/usr/local/opt/gradle-2.14.1"
 # launchctl setenv JAVA_HOME "$JAVA_HOME"
 
+# APPLE SILICON
+export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
+alias ibrew='arch -x86_64 /usr/local/bin/brew'
+alias nvim='arch -x86_64 /usr/local/bin/nvim'
+
 # GOLANG
 export GOROOT=/usr/local/opt/go/libexec
 export GOPATH="$HOME/go"
