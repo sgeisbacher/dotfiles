@@ -22,15 +22,20 @@ gocover() { go test -v -coverprofile=/tmp/cover.out "$1" && go tool cover -html=
 source $HOME/.cargo/env
 
 # PATH
-GNUCOREUTILS="/usr/local/opt/coreutils/libexec/gnubin" 
-GNUFINDUTILS="/usr/local/opt/findutils/libexec/gnubin"
-export PATH="$GNUFINDUTILS:$GNUCOREUTILS:$PATH:$GRADLE_HOME/bin"
+export PATH="/opt/homebrew/opt/node@12/bin:$PATH"
+GNUCOREUTILS="/opt/homebrew/opt/coreutils/libexec/gnubin"
+GNUBINUTILS="/opt/homebrew/opt/binutils/bin"
+GNUFINDUTILS="/opt/homebrew/opt/findutils/libexec/gnubin"
+GNUGREPUTILS="/opt/homebrew/opt/grep/libexec/gnubin"
+export PATH="$GNUGREPUTILS:$GNUBINUTILS:$GNUFINDUTILS:$GNUCOREUTILS:$PATH:$GRADLE_HOME/bin"
 export PATH="$PATH:/sbin:/usr/local/bin:$HOME/nc/bin:$HOME/bin"
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 export PATH="$HOME/Library/Python/3.8/bin:$PATH"
 export PATH="$HOME/.gem/ruby/2.3.0/bin:$PATH"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 
 # MISC CODING STUFF
 export REACT_DEVTOOLS_PATH="/Users/stefan/Library/Application Support/Google/Chrome/Default/Extensions/fmkadmapgofadopljbjfkapdkoienihi/2.5.0_0"
