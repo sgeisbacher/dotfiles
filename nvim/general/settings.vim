@@ -9,6 +9,7 @@ set nu
 set relativenumber
 set cursorline
 set nowrap
+set ignorecase
 set smartcase
 set noswapfile
 set nobackup

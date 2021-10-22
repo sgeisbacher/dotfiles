@@ -15,7 +15,6 @@ autoload -Uz compinit && compinit -i
 
 
 
-
 #  ENV_SHELL CONFIG
 
 function env_shell_prompt() {
@@ -67,3 +66,4 @@ grml_theme_add_token mypath -f mypath_prompt '%B' '%f '
 # PROMPT STYLE
 
 zstyle ':prompt:grml:left:setup' items change-root env-shell host mypath rc myvcs
+true

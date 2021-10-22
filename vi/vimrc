@@ -5,7 +5,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
     Plugin 'VundleVim/Vundle.vim'
     Plugin 'tomasr/molokai'
-    Plugin 'rking/ag.vim'
     Plugin 'kien/ctrlp.vim'
     Plugin 'scrooloose/nerdtree'
     Plugin 'scrooloose/syntastic'
@@ -22,6 +21,7 @@ syntax on
 
 " COMMON SETTINGS
 let mapleader=","
+set backspace=2
 
 
 " WHITESPACING
@@ -46,12 +46,6 @@ set incsearch          " search while typing
 set hlsearch           " highlight matches
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
-nnoremap <leader>a :Ag<SPACE>
-if executable('ag')
-    set grepprg=ag\ --nogroup\ --nocolor\ 
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-    let g:ctrlp_use_caching = 0
-endif
 noremap <Leader>a :Ack <cword><cr>
 
 " MOVEMENT
@@ -88,10 +82,10 @@ au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
 au FileType go nmap <leader>i <Plug>(go-info)
 
-
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
+" JAVASCRIPT
+au FileType javascript set tabstop=2          " number of visual spaces per TAB
+au FileType javascript set softtabstop=2      " number of spaces in tab when editing
+au FileType javascript set shiftwidth=2
 
 if filereadable(expand("~/.vim/bundle/molokai/colors/molokai.vim"))
     colorscheme molokai

@@ -11,8 +11,9 @@ call plug#begin("~/.vim/plugged")
     Plug 'fatih/vim-go'
     Plug 'unblevable/quick-scope' " higlight for f t
     Plug 'tpope/vim-commentary' "gcc
-"    Plug 'vim-airline/vim-airline'
-"    Plug 'vim-airline/vim-airline-themes'
+    Plug 'airblade/vim-gitgutter' "gcc
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
     Plug 'tpope/vim-surround'
 
 call plug#end()
