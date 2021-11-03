@@ -44,7 +44,7 @@ nnoremap <leader>bd :ls<CR>:bdelete<Space>
 nnoremap <m-p> :bp<CR>
 nnoremap <m-n> :bn<CR>
 
-nnoremap <m-h> :call GitGutterNextHunkCycle()<CR>
+nnoremap <m-j> :call GitGutterNextHunkCycle()<CR>
 nnoremap <leader>hs :GitGutterStageHunk<CR>
 nnoremap <leader>hn :GitGutterNextHunk<CR>
 nnoremap <leader>hp :GitGutterPrevHunk<CR>
@@ -57,7 +57,7 @@ nmap <leader>ffp :Agf<CR><C-P>
 nmap <leader>f :Ag<CR>
 nmap <leader>ff :Agf<CR>
 
-
+nnoremap <C-t> :NERDTreeToggle<CR>
 
 function! GitGutterNextHunkCycle()
   let line = line('.')
@@ -67,3 +67,4 @@ function! GitGutterNextHunkCycle()
     GitGutterNextHunk
   endif
 endfunction
+
