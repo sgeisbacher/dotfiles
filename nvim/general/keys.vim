@@ -1,7 +1,9 @@
+" meta-modifier: https://stackoverflow.com/a/27607327
+
 let mapleader=' '
 
-nnoremap <leader>h :wincmd h<CR>
-nnoremap <leader>l :wincmd l<CR>
+nnoremap <m-h> :wincmd h<CR>
+nnoremap <m-l> :wincmd l<CR>
 nnoremap <leader>vs :wincmd v<CR>
 nnoremap <leader>ss :wincmd s<CR>
 nnoremap > <C-w>>
@@ -17,7 +19,8 @@ nnoremap <Down> <C-w>j
 nnoremap <Left> <C-w>h
 nnoremap <Right> <C-w>l
 
-nnoremap <leader>f :GFiles<CR>
+nnoremap <m-o> :FZF<CR>
+nnoremap <m-f> :GFiles<CR>
 
 nnoremap \ "
 
@@ -27,7 +30,7 @@ nmap <C-d> <C-x>
 nnoremap [ {
 nnoremap ] }
 
-nnoremap <leader>p :Format<CR>
+nnoremap <m-f> :Format<CR>
 
 nnoremap gb <C-^>
 nnoremap <leader>d  :<C-u>CocList diagnostics<cr>
@@ -38,12 +41,14 @@ vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 nnoremap <leader>b :ls<CR>:b<Space>
 nnoremap <leader>bd :ls<CR>:bdelete<Space>
-nnoremap <leader>bp :bp<CR>
-nnoremap <leader>bn :bn<CR>
+nnoremap <m-p> :bp<CR>
+nnoremap <m-n> :bn<CR>
 
-nnoremap <leader>gn :GitGutterNextHunk<CR>
-nnoremap <leader>gp :GitGutterPrevHunk<CR>
-nnoremap <leader>gd :GitGutterPreviewHunk<CR>
+nnoremap <m-h> :call GitGutterNextHunkCycle()<CR>
+nnoremap <leader>hs :GitGutterStageHunk<CR>
+nnoremap <leader>hn :GitGutterNextHunk<CR>
+nnoremap <leader>hp :GitGutterPrevHunk<CR>
+nnoremap <leader>hd :GitGutterPreviewHunk<CR>
 
 " reopen last Ag-search
 nmap <leader>fp :Ag<CR><C-P>
@@ -52,3 +57,13 @@ nmap <leader>ffp :Agf<CR><C-P>
 nmap <leader>f :Ag<CR>
 nmap <leader>ff :Agf<CR>
 
+
+
+function! GitGutterNextHunkCycle()
+  let line = line('.')
+  silent! GitGutterNextHunk
+  if line('.') == line
+    1
+    GitGutterNextHunk
+  endif
+endfunction
