@@ -32,9 +32,6 @@ nnoremap ] }
 
 nnoremap <m-f> :Format<CR>
 
-nnoremap gb <C-^>
-nnoremap <leader>d  :<C-u>CocList diagnostics<cr>
-
 nnoremap <leader><leader> :nohlsearch<CR>
 
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
@@ -49,6 +46,25 @@ nnoremap <leader>hs :GitGutterStageHunk<CR>
 nnoremap <leader>hn :GitGutterNextHunk<CR>
 nnoremap <leader>hp :GitGutterPrevHunk<CR>
 nnoremap <leader>hd :GitGutterPreviewHunk<CR>
+
+" LSP config (the mappings used in the default file don't quite work right)
+nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> <m-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <silent> <leader>n <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
+nnoremap <silent> <leader>p <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap <silent> <S-e> <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
+nnoremap <silent> <m-e> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+
+" autocomplete (compe) 
+inoremap <silent><expr> <C-Space> compe#complete()
+inoremap <silent><expr> <CR>      compe#confirm('<CR>')
+inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
+inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
 
 " reopen last Ag-search
 nmap <leader>fp :Ag<CR><C-P>

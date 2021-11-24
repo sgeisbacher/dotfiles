@@ -1,10 +1,14 @@
 call plug#begin("~/.vim/plugged")
 
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'hrsh7th/nvim-compe'
+    Plug 'hrsh7th/vim-vsnip'
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'sbdchd/neoformat'
     Plug 'morhetz/gruvbox'
     Plug 'scrooloose/nerdtree'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'herringtondarkholme/yats.vim'
     Plug 'peitalin/vim-jsx-typescript'
     Plug 'liuchengxu/vim-which-key'

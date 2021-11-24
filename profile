@@ -9,7 +9,6 @@
 # APPLE SILICON
 export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 alias ibrew='arch -x86_64 /usr/local/bin/brew'
-alias nvim='arch -x86_64 /usr/local/bin/nvim'
 
 # GOLANG
 export GOROOT=/usr/local/go
@@ -48,7 +47,7 @@ alias 1pwd='gopass show -c 1pwd-masterpwd && open /Applications/1Password\ 7.app
 alias onepwd='1pwd'
 alias man='_() { echo $1; man -M $(brew --prefix)/opt/coreutils/libexec/gnuman $1 1>/dev/null 2>&1;  if [ "$?" -eq 0 ]; then man -M $(brew --prefix)/opt/coreutils/libexec/gnuman $1; else man $1; fi }; _'
 alias vimrc='vim $HOME/.vimrc'
-alias nvimrc='nvim $HOME/.config/nvim/init.vim'
+alias nvimrc='cd $HOME/.config/nvim/ && nvim'
 alias zshrc='vim $HOME/.zshrc.local'
 alias profile='vim $HOME/.profile'
 alias gst="git status -sb"
