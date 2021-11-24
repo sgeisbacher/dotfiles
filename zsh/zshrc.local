@@ -20,7 +20,7 @@ autoload -Uz compinit && compinit -i
 
 function env_shell_prompt() {
     REPLY=""
-    [[ "$ENV_SHELL" != "" ]] && REPLY="(env-$ENV_SHELL) - "
+    [[ "$ENV_SHELL" != "" ]] && REPLY="($ENV_SHELL) - "
 }
 
 grml_theme_add_token env-shell -f env_shell_prompt '%F{red}' '%f'
