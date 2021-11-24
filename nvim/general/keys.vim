@@ -2,6 +2,17 @@
 
 let mapleader=' '
 
+" yank to clipboard
+vnoremap <leader>y "+y
+" yank to register b
+nnoremap yb "byy
+vnoremap yb "byy
+nnoremap pb "bp
+" yank to register c
+nnoremap yc "cyy
+vnoremap yc "cyy
+nnoremap pc "cp
+
 nnoremap <m-h> :wincmd h<CR>
 nnoremap <m-l> :wincmd l<CR>
 nnoremap <leader>vs :wincmd v<CR>
