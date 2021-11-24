@@ -51,11 +51,12 @@ alias nvimrc='cd $HOME/.config/nvim/ && nvim'
 alias zshrc='vim $HOME/.zshrc.local'
 alias profile='vim $HOME/.profile'
 alias gst="git status -sb"
+alias gpush="git push --no-verify"
 alias gcd="_() { git log --left-right --graph --cherry-pick --oneline ${1}...${2} }; _"
 alias gdiff="git diff"
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias glg="glog"
-alias gco="git checkout"
+alias gco="git checkout --no-verify"
 alias gresetlocks="git status -s | cut -d' ' -f3 | egrep '(package-lock.json|yarn.lock)' | xargs -r git checkout --"
 alias fdisks='fdisk -l | grep "Disk /"'
 alias listenports='lsof -nPi | grep -i listen'
