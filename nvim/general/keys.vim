@@ -73,7 +73,19 @@ nmap <leader>ffp :Agf<CR><C-P>
 nmap <leader>f :Ag<CR>
 nmap <leader>ff :Agf<CR>
 
-nnoremap <C-t> :NERDTreeToggle<CR>
+" legacy
+"nnoremap <C-t> :NERDTreeToggle<CR>
+
+" toggle Nerdtree and open the current folder
+function! ToggleNerdTree()
+    if exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1
+        execute ":NERDTreeClose"
+    else
+        execute ":NERDTreeFind"
+    endif
+endfunction
+
+nnoremap <C-t> :call ToggleNerdTree()<CR>
 
 function! GitGutterNextHunkCycle()
   let line = line('.')
