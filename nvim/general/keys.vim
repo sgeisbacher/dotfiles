@@ -7,11 +7,11 @@ vnoremap <leader>y "+y
 " yank to register b
 nnoremap yb "byy
 vnoremap yb "byy
-nnoremap pb "bp
+nnoremap bp "bp
 " yank to register c
 nnoremap yc "cyy
 vnoremap yc "cyy
-nnoremap pc "cp
+nnoremap cp "cp
 
 nnoremap <m-h> :wincmd h<CR>
 nnoremap <m-l> :wincmd l<CR>
