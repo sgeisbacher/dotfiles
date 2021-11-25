@@ -13,8 +13,6 @@ nnoremap yc "cyy
 vnoremap yc "cyy
 nnoremap cp "cp
 
-nnoremap <m-h> :wincmd h<CR>
-nnoremap <m-l> :wincmd l<CR>
 nnoremap <leader>vs :wincmd v<CR>
 nnoremap <leader>ss :wincmd s<CR>
 nnoremap > <C-w>>
@@ -25,10 +23,10 @@ nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 vnoremap <Up> <nop>
 vnoremap <Down> <nop>
 
-nnoremap <Up> <C-w>k
-nnoremap <Down> <C-w>j
-nnoremap <Left> <C-w>h
-nnoremap <Right> <C-w>l
+" nnoremap <Up> <C-w>k
+" nnoremap <Down> <C-w>j
+" nnoremap <Left> <C-w>h
+" nnoremap <Right> <C-w>l
 
 nnoremap <m-o> :FZF<CR>
 nnoremap <m-f> :GFiles<CR>
@@ -52,7 +50,7 @@ nnoremap <leader>bd :ls<CR>:bdelete<Space>
 nnoremap <m-p> :bp<CR>
 nnoremap <m-n> :bn<CR>
 
-nnoremap <m-j> :call GitGutterNextHunkCycle()<CR>
+nnoremap <m-h> :call GitGutterNextHunkCycle()<CR>
 nnoremap <leader>hs :GitGutterStageHunk<CR>
 nnoremap <leader>hn :GitGutterNextHunk<CR>
 nnoremap <leader>hp :GitGutterPrevHunk<CR>
