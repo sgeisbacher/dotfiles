@@ -14,3 +14,4 @@ source $HOME/.config/nvim/general/custom-theming.vim
 
 luafile $HOME/.config/nvim/language-servers/tsserver.lua
 luafile $HOME/.config/nvim/plug-config/compe.lua
+
