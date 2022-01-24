@@ -16,3 +16,12 @@ augroup DimInactiveWindows
   augroup END
 
 "autocmd FileType * :GitGutterSignsEnable
+
+
+" starship-api
+lua <<EOF
+if string.find(vim.fn.getcwd(), 'starship%-api_clone') then
+    print('starship-api-clone: setting colorscheme to darkblue')
+    vim.cmd('colorscheme darkblue')
+end
+EOF
