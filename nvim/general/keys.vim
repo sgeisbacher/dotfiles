@@ -47,10 +47,11 @@ vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 nnoremap <leader>b :ls<CR>:b<Space>
 nnoremap <leader>bd :ls<CR>:bdelete<Space>
-nnoremap <m-p> :bp<CR>
-nnoremap <m-n> :bn<CR>
+nnoremap <m-l> :bp<CR>
+nnoremap <m-h> :bn<CR>
 
-nnoremap <m-h> :call GitGutterNextHunkCycle()<CR>
+nnoremap <m-n> :call GitGutterNextHunkCycle()<CR>
+nnoremap <m-p> :GitGutterPrevHunk<CR>
 nnoremap <leader>hs :GitGutterStageHunk<CR>
 nnoremap <leader>hn :GitGutterNextHunk<CR>
 nnoremap <leader>hp :GitGutterPrevHunk<CR>
