@@ -20,6 +20,7 @@ call plug#begin("~/.vim/plugged")
     Plug 'vim-airline/vim-airline-themes'
     Plug 'tpope/vim-surround'
     Plug 'jparise/vim-graphql'
+    Plug 'tveskag/nvim-blame-line'
 
 call plug#end()
 

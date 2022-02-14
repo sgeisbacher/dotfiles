@@ -105,3 +105,5 @@ function! GitGutterNextHunkCycle()
   endif
 endfunction
 
+
+nnoremap <leader>b :ToggleBlameLine<CR>
