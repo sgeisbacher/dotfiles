@@ -21,6 +21,8 @@ call plug#begin("~/.vim/plugged")
     Plug 'tpope/vim-surround'
     Plug 'jparise/vim-graphql'
     Plug 'tveskag/nvim-blame-line'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'jose-elias-alvarez/null-ls.nvim'
 
 call plug#end()
 
