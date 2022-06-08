@@ -23,6 +23,7 @@ call plug#begin("~/.vim/plugged")
     Plug 'tveskag/nvim-blame-line'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'jose-elias-alvarez/null-ls.nvim'
+    Plug 'hashivim/vim-terraform'
 
 call plug#end()
 
