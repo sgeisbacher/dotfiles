@@ -8,6 +8,7 @@ vnoremap <leader>y "+y
 nnoremap yb "byy
 vnoremap yb "byy
 nnoremap bp "bp
+nnoremap bP "bP
 " yank to register c
 nnoremap yc "cyy
 vnoremap yc "cyy
@@ -47,8 +48,8 @@ vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 nnoremap <leader>b :ls<CR>:b<Space>
 nnoremap <leader>bd :ls<CR>:bdelete<Space>
-nnoremap <m-l> :bp<CR>
-nnoremap <m-h> :bn<CR>
+nnoremap <m-h> :bp<CR>
+nnoremap <m-l> :bn<CR>
 
 nnoremap <m-n> :call GitGutterNextHunkCycle()<CR>
 nnoremap <m-p> :GitGutterPrevHunk<CR>
@@ -108,3 +109,5 @@ endfunction
 
 
 nnoremap <leader>b :ToggleBlameLine<CR>
+
+"" Ctrl-G show full file path
