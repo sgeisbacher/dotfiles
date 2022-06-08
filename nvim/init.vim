@@ -13,5 +13,8 @@ source $HOME/.config/nvim/general/keys.vim
 source $HOME/.config/nvim/general/custom-theming.vim
 
 luafile $HOME/.config/nvim/language-servers/tsserver.lua
+luafile $HOME/.config/nvim/language-servers/graphql.lua
+luafile $HOME/.config/nvim/language-servers/go.lua
+
 luafile $HOME/.config/nvim/plug-config/compe.lua
 
