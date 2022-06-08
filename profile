@@ -11,9 +11,9 @@ export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 alias ibrew='arch -x86_64 /usr/local/bin/brew'
 
 # GOLANG
-export GOROOT=/usr/local/go
+###EEEexport GOROOT=/usr/local/go
 #export GOPATH="$HOME/go"
-export PATH=$GOROOT/bin:$PATH
+export PATH=$HOME/go/bin:$PATH
 #alias gosrc="cd $GOPATH/src/github.com/sgeisbacher"
 gocover() { go test -v -coverprofile=/tmp/cover.out "$1" && go tool cover -html=/tmp/cover.out -o /tmp/coverage.html && open /tmp/coverage.html }
 
