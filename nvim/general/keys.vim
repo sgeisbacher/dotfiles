@@ -109,5 +109,5 @@ endfunction
 
 
 nnoremap <leader>b :ToggleBlameLine<CR>
-
+nnoremap <leader>ttc :cclose<CR>
 "" Ctrl-G show full file path
