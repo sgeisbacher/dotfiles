@@ -1,6 +1,11 @@
 #!/bin/bash
 
-sourceFile () { test -f "$1" && source "$1" || echo "$1 not found, skipping ..." }
+# BASH COLORS
+RED='\033[0;31m'
+ORANGE='\033[0;33m'
+NC='\033[0m' # No Color
+
+sourceFile () { test -f "$1" && source "$1" || echo "${ORANGE}W: $1 not found, skipping ...${NC}" }
 
 # JAVA
 # export JAVA_HOME=$(/usr/libexec/java_home)
