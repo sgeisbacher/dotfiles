@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sourceFile () { test -f "$1" && source "$1" || echo "$1 not found, skipping ..." }
+
 # JAVA
 # export JAVA_HOME=$(/usr/libexec/java_home)
 # export JAVA_TOOL_OPTIONS='-Djava.awt.headless=true'
@@ -18,7 +20,7 @@ export PATH=$HOME/go/bin:$PATH
 gocover() { go test -v -coverprofile=/tmp/cover.out "$1" && go tool cover -html=/tmp/cover.out -o /tmp/coverage.html && open /tmp/coverage.html }
 
 # RUST
-source $HOME/.cargo/env
+sourceFile $HOME/.cargo/env
 
 # PATH
 export PATH="/opt/homebrew/opt/node@12/bin:$PATH"
@@ -108,9 +110,11 @@ x () {
 }
 
 # MISC
-if ! (ssh-add -l | grep -q 'privateservers') ; then
-	echo "adding id_rsa_privateservers to ssh-agent ..."
-	ssh-add ~/.ssh/id_rsa_privateservers
+if test -f "~/.ssh/id_rsa_privateservers"; then
+	if ! (ssh-add -l | grep -q 'privateservers') ; then
+		echo "adding id_rsa_privateservers to ssh-agent ..."
+		ssh-add ~/.ssh/id_rsa_privateservers
+	fi
 fi
 export TERM=xterm-256color
 export ANSIBLE_NOCOWS=1
@@ -130,4 +134,3 @@ export ANSIBLE_NOCOWS=1
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-. "$HOME/.cargo/env"
