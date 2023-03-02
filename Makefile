@@ -24,5 +24,6 @@ install-nvim:
 	nvim +PlugInstall
 
 install-zsh:
+	git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 	ln -s ~/dotfiles/profile ~/.profile
 	ln -s ~/dotfiles/zsh/zshrc.local ~/.zshrc.local
