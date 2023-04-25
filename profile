@@ -25,7 +25,7 @@ export PATH=$HOME/go/bin:$PATH
 gocover() { go test -v -coverprofile=/tmp/cover.out "$1" && go tool cover -html=/tmp/cover.out -o /tmp/coverage.html && open /tmp/coverage.html }
 
 # RUST
-sourceFile $HOME/.cargo/env
+#sourceFile $HOME/.cargo/env
 
 # PATH
 export PATH="/opt/homebrew/opt/node@12/bin:$PATH"
