@@ -6,7 +6,9 @@ export LC_ALL=en_US.UTF-8
 set -o vi
 
 fpath=(~/.zsh/completion $fpath)
+autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit -i
+complete -C '/opt/homebrew/bin/aws_completer' aws
 
 . ~/dotfiles/profile
 #. ~/dotfiles/zsh/zshrc.local.time
