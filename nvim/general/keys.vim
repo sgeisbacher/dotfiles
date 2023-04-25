@@ -67,7 +67,7 @@ nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> <m-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent> <leader>n <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap <silent> <leader>p <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
-nnoremap <silent> <S-e> <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
+nnoremap <silent> <S-e> <cmd>lua vim.diagnostic.open_float()<CR>
 nnoremap <silent> <m-e> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 
 " autocomplete (compe) 
