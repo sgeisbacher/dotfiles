@@ -24,7 +24,7 @@ function env_shell_prompt() {
     [[ "$ENV_SHELL" != "" ]] && REPLY="($ENV_SHELL) - "
 }
 
-grml_theme_add_token env-shell -f env_shell_prompt '%F{red}' '%f'
+#grml_theme_add_token env-shell -f env_shell_prompt '%F{red}' '%f'
 
 
 
@@ -32,21 +32,19 @@ grml_theme_add_token env-shell -f env_shell_prompt '%F{red}' '%f'
 
 #  VCS CONFIG
 
-autoload -Uz vcs_info
+#autoload -Uz vcs_info
 
-precmd() { vcs_info }
+#precmd() { vcs_info }
 
 function myvcs_prompt() {
     REPLY="${vcs_info_msg_0_}"
     REPLY=$(echo "${REPLY}" | sed "s/feature/$(printf "\xE2\x80\xA6")/g")
 }
 
-zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' formats '%F{magenta}[%F{green}%b%F{magenta}%u] '
-zstyle ':vcs_info:*' unstagedstr '%F{red}!%F{magenta}'
-grml_theme_add_token myvcs -f myvcs_prompt '%F{magenta}' '%f'
-
-
+#zstyle ':vcs_info:*' check-for-changes true
+#zstyle ':vcs_info:*' formats '%F{magenta}[%F{green}%b%F{magenta}%u] '
+#zstyle ':vcs_info:*' unstagedstr '%F{red}!%F{magenta}'
+#grml_theme_add_token myvcs -f myvcs_prompt '%F{magenta}' '%f'
 
 
 
@@ -55,10 +53,11 @@ grml_theme_add_token myvcs -f myvcs_prompt '%F{magenta}' '%f'
 function mypath_prompt() {
     REPLY="${PWD}"
     REPLY=$(echo "${REPLY}" | sed "s#/Users/stefan#~#g")
+    REPLY=$(echo "${REPLY}" | sed "s#/Users/sgeisbac#~#g")
     [[ ! "$REPLY" =~ starshiphsa$ ]] && REPLY=$(echo "${REPLY}" | sed "s#code/business/starshiphsa#$(printf "\xE2\x80\xA6")#g")
 }
 
-grml_theme_add_token mypath -f mypath_prompt '%B' '%f '
+#grml_theme_add_token mypath -f mypath_prompt '%B' '%f '
 
 
 
@@ -69,3 +68,5 @@ grml_theme_add_token mypath -f mypath_prompt '%B' '%f '
 
 zstyle ':prompt:grml:left:setup' items change-root env-shell host mypath rc myvcs
 true
+
+eval "$(starship init zsh)"
