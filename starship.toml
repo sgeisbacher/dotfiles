@@ -22,7 +22,7 @@ symbol = " "
 style = "blue"
 read_only = " "
 truncation_length = 4
-truncate_to_repo = false
+truncate_to_repo = true
 
 [character]
 success_symbol = "[❯](purple)"
