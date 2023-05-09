@@ -85,6 +85,8 @@ alias restic_htz='restic -r sftp:u151603@u151603.your-storagebox.de:stefan -p ~/
 alias restic_aws='AWS_ACCESS_KEY_ID=${RESTIC_AWS_ACCESS_KEY_ID} AWS_SECRET_ACCESS_KEY=${RESTIC_AWS_SECRET_ACCESS_KEY} restic -r s3:https://s3.amazonaws.com/sgeisbacher-bkp/restic -p ~/.restic-passwd'
 alias restic_franz='eval $(gopass network/restic/franz-cmd)'
 
+alias fridgeFetch='curl https://jg734d2sub.execute-api.eu-central-1.amazonaws.com/dev/fetchAndStore'
+
 # FUNCTIONS
 fgrep () { find . -type f -iname "$2" -print0 | xargs -0 grep -HI "$1" ; }
 ff () { /usr/bin/find . -iname "$@" ; }
@@ -120,6 +122,7 @@ x () {
 }
 
 # MISC
+echo "checking for ssh-key..."
 if test -f "~/.ssh/id_rsa_privateservers"; then
 	if ! (ssh-add -l | grep -q 'privateservers') ; then
 		echo "adding id_rsa_privateservers to ssh-agent ..."
