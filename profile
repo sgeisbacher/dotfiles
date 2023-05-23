@@ -78,7 +78,11 @@ alias d='date +%Y-%m-%d'
 alias vi='vim'
 alias nmapsshsrvs='nmap -oG - -p 22 --open -sV'
 alias mysqlclient='docker run -ti alpine /bin/sh -c "apk --update add mysql-client && /bin/sh"'
-
+alias kc='kubectl config use-context'
+alias k='kubectl'
+kubegetallenvvalues() { 
+    kubectl get deployments -o=jsonpath="{range .items[*]}{.metadata.name}{'\t'}{.spec.template.spec.containers[0].env[?(@.name=='$1')].value}{'\n'}{end}"
+}
 
 alias restic_nas='restic -r sftp:fileserver.grz:/srv/storage/fileserver/restic/stefan -p ~/.restic-passwd'
 alias restic_htz='restic -r sftp:u151603@u151603.your-storagebox.de:stefan -p ~/.restic-passwd'
