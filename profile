@@ -84,6 +84,10 @@ kubegetallenvvalues() {
     kubectl get deployments -o=jsonpath="{range .items[*]}{.metadata.name}{'\t'}{.spec.template.spec.containers[0].env[?(@.name=='$1')].value}{'\n'}{end}"
 }
 
+video_speed_up() {
+    ffmpeg -i "$1" -vf "setpts=0.33*PTS" "$2"
+}
+
 alias restic_nas='restic -r sftp:fileserver.grz:/srv/storage/fileserver/restic/stefan -p ~/.restic-passwd'
 alias restic_htz='restic -r sftp:u151603@u151603.your-storagebox.de:stefan -p ~/.restic-passwd'
 alias restic_aws='AWS_ACCESS_KEY_ID=${RESTIC_AWS_ACCESS_KEY_ID} AWS_SECRET_ACCESS_KEY=${RESTIC_AWS_SECRET_ACCESS_KEY} restic -r s3:https://s3.amazonaws.com/sgeisbacher-bkp/restic -p ~/.restic-passwd'
