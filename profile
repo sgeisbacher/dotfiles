@@ -34,7 +34,7 @@ GNUBINUTILS="/opt/homebrew/opt/binutils/bin"
 GNUFINDUTILS="/opt/homebrew/opt/findutils/libexec/gnubin"
 GNUGREPUTILS="/opt/homebrew/opt/grep/libexec/gnubin"
 export PATH="$GNUGREPUTILS:$GNUBINUTILS:$GNUFINDUTILS:$GNUCOREUTILS:$PATH:$GRADLE_HOME/bin"
-export PATH="$PATH:/sbin:/usr/local/bin:$HOME/nc/bin:$HOME/bin"
+export PATH="$PATH:/sbin:/usr/local/bin:$HOME/bin"
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 export PATH="$HOME/Library/Python/3.8/bin:$PATH"
@@ -71,6 +71,7 @@ alias glg="glog"
 alias gco="git checkout"
 alias gcom="git commit --no-verify"
 alias gresetlocks="git status -s | cut -d' ' -f3 | egrep '(package-lock.json|yarn.lock)' | xargs -r git checkout --"
+alias gclose="npx zx $HOME/dotfiles/scripts/git-shortcuts/index.mjs"
 alias fdisks='fdisk -l | grep "Disk /"'
 alias listenports='lsof -nPi | grep -i listen'
 alias ssh='LANG="en_US.UTF-8" LC_CTYPE="en_US.UTF-8" LC_ALL="en_US.UTF-8" /usr/bin/ssh'
