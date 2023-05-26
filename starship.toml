@@ -5,8 +5,8 @@ $git_branch\
 $git_state\
 $git_status\
 $git_metrics\
-$terraform\
 $fill\
+$terraform\
 $kubernetes\
 $nodejs\
 $cmd_duration $jobs $time\
@@ -75,7 +75,8 @@ format = 'k8s:[$context]($style) '
 style = 'bold green'
 
 [terraform]
-format = 'tf-ws [$symbol$workspace]($style) '
+format = 'tf:[$workspace]($style) '
+style = 'bold green'
 
 [custom.stunnel]
 when = "ps aux | grep stunnel | grep -v grep"
