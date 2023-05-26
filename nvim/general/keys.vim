@@ -14,6 +14,9 @@ nnoremap yc "cyy
 vnoremap yc "cyy
 nnoremap cp "cp
 
+nnoremap n nzz
+nnoremap N Nzz
+
 nnoremap <leader>vs :wincmd v<CR>
 nnoremap <leader>ss :wincmd s<CR>
 nnoremap > <C-w>>
