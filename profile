@@ -88,6 +88,9 @@ kubegetallenvvalues() {
 video_speed_up() {
     ffmpeg -i "$1" -vf "setpts=0.33*PTS" "$2"
 }
+brew_version() {
+    brew info --json $1 | jq -r '.[].versioned_formulae[]'
+}
 
 alias restic_nas='restic -r sftp:fileserver.grz:/srv/storage/fileserver/restic/stefan -p ~/.restic-passwd'
 alias restic_htz='restic -r sftp:u151603@u151603.your-storagebox.de:stefan -p ~/.restic-passwd'
