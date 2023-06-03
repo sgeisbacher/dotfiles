@@ -27,6 +27,9 @@ gocover() { go test -v -coverprofile=/tmp/cover.out "$1" && go tool cover -html=
 # RUST
 #sourceFile $HOME/.cargo/env
 
+# NODE
+#export NODE_PATH=`npm root -g`
+
 # PATH
 export PATH="/opt/homebrew/opt/node@12/bin:$PATH"
 GNUCOREUTILS="/opt/homebrew/opt/coreutils/libexec/gnubin"

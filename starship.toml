@@ -6,6 +6,7 @@ $git_state\
 $git_status\
 $git_metrics\
 $fill\
+$aws\
 $terraform\
 $kubernetes\
 $nodejs\
@@ -74,9 +75,18 @@ disabled = false
 format = 'k8s:[$context]($style) '
 style = 'bold green'
 
+[kubernetes.context_aliases]
+starship-dev = 'dev'
+
 [terraform]
 format = 'tf:[$workspace]($style) '
 style = 'bold green'
+
+[aws]
+format = 'aws:[$profile]($style) '
+
+[aws.profile_aliases]
+starship_sgeisbacher = 'ship-sg'
 
 [custom.stunnel]
 when = "ps aux | grep stunnel | grep -v grep"
