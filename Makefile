@@ -20,8 +20,6 @@ install-nvim-debian:
 install-nvim: 
 	mkdir -p ~/.config
 	ln -sf ~/dotfiles/nvim ~/.config/nvim
-	sh -c 'curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-	nvim +PlugInstall
 
 install-zsh:
 	git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
