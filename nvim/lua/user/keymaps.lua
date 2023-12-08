@@ -15,7 +15,14 @@ vim.g.maplocalleader = " "
 --
 --
 -- NORMAL MODE --
-keymap("n", "<leader>ttc", ":cclose<CR>", opts) -- close tooltip pane
+keymap("n", "<leader>ttc", ":cclose<CR>", opts)   -- close tooltip pane
+keymap("n", "<m-o>", "<cmd>lua require('fzf-lua').files()<CR>", opts)   -- open fuzzy file search
+-- keymap("n", "<leader>ff", "<cmd>lua require('fzf-lua').grep({ search = '', cmd = 'git grep --line-number --column --color=always' })<CR>", opts)
+-- keymap("n", "<leader>ff", "<cmd>lua require('fzf-lua').grep({ search = '', rg_opts = '--column --line-number --no-heading --color=always --smart-case --max-columns=120 --hidden -M 120 -g \"!.git\"'})<CR>", opts)  
+-- open fuzzy grep search -- grep also in hidden 
+--    -M 120 only indexes the first 120 chars of each line, so you get all those minified thousands of chars oneliners out of your index
+keymap("n", "<leader>ff", "<cmd>lua require('fzf-lua').grep({ search = '' })<CR>", opts)  
+keymap("n", "<leader>fp", "<cmd>lua require('fzf-lua').resume()<CR>", opts)
 
 -- search
 keymap("n", "n", "nzz", opts) -- center next search-result
