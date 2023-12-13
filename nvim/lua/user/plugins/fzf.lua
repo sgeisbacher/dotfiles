@@ -3,7 +3,7 @@ return {
   event = "VeryLazy",
   dependencies = { { "junegunn/fzf", build = "./install --bin" } },
   config = function()
-    require("fzf-lua").setup({'fzf-vim'})
+    require("fzf-lua").setup({ "fzf-vim" })
   end,
-  opts = {}
+  opts = {},
 }
