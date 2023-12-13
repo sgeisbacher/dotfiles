@@ -1,0 +1,18 @@
+return {
+  "neovim/nvim-lspconfig",
+  event = "VeryLazy",
+  dependencies = {
+    { "williamboman/mason.nvim", opts = {} },
+    { "williamboman/mason-lspconfig.nvim", opts = {} },
+    {
+      "j-hui/fidget.nvim",
+      tag = "legacy",
+      event = "LspAttach",
+      opts = {},
+    },
+    { "folke/neodev.nvim", opts = {} },
+  },
+  init = function()
+    require("user.lsp")
+  end,
+}
