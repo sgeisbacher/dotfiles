@@ -24,6 +24,10 @@ keymap("n", "<m-o>", "<cmd>lua require('fzf-lua').files()<CR>", opts) -- open fu
 keymap("n", "<leader>ff", "<cmd>lua require('fzf-lua').grep({ search = '' })<CR>", opts)
 keymap("n", "<leader>fp", "<cmd>lua require('fzf-lua').resume()<CR>", opts)
 
+-- git
+keymap("n", "<leader>b", ":GitBlameToggle<CR>", opts)
+keymap("n", "<leader>bb", ":GitBlameOpenFileURL<CR>", opts)
+
 -- search
 keymap("n", "n", "nzz", opts) -- center next search-result
 keymap("n", "N", "Nzz", opts) -- center prev search-result
