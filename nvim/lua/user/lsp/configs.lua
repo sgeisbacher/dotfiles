@@ -2,6 +2,7 @@ local lspconfig = require("lspconfig")
 local servers = {
   "tsserver",
   "gopls",
+  "lua_ls",
 }
 
 for _, server in pairs(servers) do
