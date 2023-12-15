@@ -18,6 +18,8 @@ vim.opt.smartindent = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.wrap = false
+-- prevents left signcolumn to pop in and out all the time while typing (lsp errors)
+vim.opt.signcolumn = "yes"
 -- vim.opt.cursorline = true
 
 -- search
