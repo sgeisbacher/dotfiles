@@ -4,6 +4,7 @@ return {
   dependencies = {
     { "williamboman/mason.nvim", opts = {} },
     { "williamboman/mason-lspconfig.nvim", opts = {} },
+    { "WhoIsSethDaniel/mason-tool-installer.nvim", opts = {} },
     {
       "j-hui/fidget.nvim",
       tag = "legacy",
@@ -28,6 +29,13 @@ return {
 
     require("mason-lspconfig").setup({
       automatic_installation = true,
+    })
+
+    require("mason-tool-installer").setup({
+      ensure_installed = {
+        "stylua",
+        "prettier",
+      },
     })
   end,
 }
