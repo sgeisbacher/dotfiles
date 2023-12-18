@@ -9,6 +9,7 @@ fpath=(~/.zsh/completion $fpath)
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit -i
 complete -C '/opt/homebrew/bin/aws_completer' aws
+complete -C '/opt/homebrew/share/zsh/site-functions/_colima' colima
 
 . ~/dotfiles/profile
 #. ~/dotfiles/zsh/zshrc.local.time
