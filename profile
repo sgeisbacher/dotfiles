@@ -84,6 +84,7 @@ alias nmapsshsrvs='nmap -oG - -p 22 --open -sV'
 alias mysqlclient='docker run -ti alpine /bin/sh -c "apk --update add mysql-client && /bin/sh"'
 alias kc='kubectl config use-context'
 alias k='kubectl'
+alias dnsflush='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
 kubegetallenvvalues() { 
     kubectl get deployments -o=jsonpath="{range .items[*]}{.metadata.name}{'\t'}{.spec.template.spec.containers[0].env[?(@.name=='$1')].value}{'\n'}{end}"
 }
