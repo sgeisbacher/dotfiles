@@ -2,9 +2,7 @@ format = """
 $username\
 $hostname\
 $git_branch\
-$git_state\
 $git_status\
-$git_metrics\
 $fill\
 $aws\
 $terraform\
@@ -14,6 +12,9 @@ $cmd_duration $jobs $time\
 $line_break\
 $directory\
 $character"""
+
+# $git_state\
+# $git_metrics\
 
 [nodejs]
 format = "n:[($version )]($style)"
@@ -77,6 +78,7 @@ style = 'bold green'
 
 [kubernetes.context_aliases]
 starship-dev = 'dev'
+starship-test = 'test'
 
 [terraform]
 format = 'tf:[$workspace]($style) '
@@ -87,6 +89,7 @@ format = 'aws:[$profile]($style) '
 
 [aws.profile_aliases]
 starship_sgeisbacher = 'ship-sg'
+starship_dev = 'ship-dev'
 
 [custom.stunnel]
 when = "ps aux | grep stunnel | grep -v grep"

@@ -66,7 +66,7 @@ alias gfetch="git fetch --prune"
 alias gpull="git pull --ff-only"
 alias gpush="git push"
 gbnew() { git checkout -b feature/$1 }
-alias gborigin="git push -u origin HEAD"
+alias gporigin="git push -u origin HEAD"
 alias gcd="_() { git log --left-right --graph --cherry-pick --oneline ${1}...${2} }; _"
 alias gdiff="git diff"
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
