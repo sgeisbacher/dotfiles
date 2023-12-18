@@ -73,3 +73,5 @@ zstyle ':prompt:grml:left:setup' items change-root env-shell host mypath rc myvc
 true
 
 eval "$(starship init zsh)"
+
+alias starship-aws-login="zx /Users/sgeisbac/code/business/starshiphsa/starship-tools/aws-starship-login.mjs"
