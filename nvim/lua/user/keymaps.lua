@@ -35,12 +35,12 @@ keymap("n", "<leader><leader>", ":nohlsearch<CR>", opts) -- reset search-term hi
 
 -- yank to register b
 keymap("n", "yb", '"byy', opts)
-keymap("n", "bp", '"bP', opts)
+keymap("n", "bp", '"bp', opts)
 keymap("n", "bP", '"bP', opts)
 
 -- yank to register c
 keymap("n", "yc", '"cyy', opts)
-keymap("n", "cp", '"cP', opts)
+keymap("n", "cp", '"cp', opts)
 keymap("n", "cP", '"cP', opts)
 
 -- split planes
