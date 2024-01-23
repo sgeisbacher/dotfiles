@@ -3,6 +3,7 @@ local servers = {
   "tsserver",
   "gopls",
   "lua_ls",
+  "terraformls",
 }
 
 for _, server in pairs(servers) do
