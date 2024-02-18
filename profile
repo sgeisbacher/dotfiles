@@ -139,7 +139,7 @@ x () {
 
 # MISC
 echo "checking for ssh-key..."
-if test -f "~/.ssh/id_rsa_privateservers"; then
+if [[ -f "$HOME/.ssh/id_rsa_privateservers" ]]; then
 	if ! (ssh-add -l | grep -q 'privateservers') ; then
 		echo "adding id_rsa_privateservers to ssh-agent ..."
 		ssh-add ~/.ssh/id_rsa_privateservers
