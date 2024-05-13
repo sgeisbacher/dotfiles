@@ -26,3 +26,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.ignorecase = true
 vim.opt.smartcase = true -- disable ignorecase when search pattern contains upper case chars
 vim.opt.incsearch = true
+
+-- windows
+vim.opt.splitbelow = true
+vim.opt.splitright = true
