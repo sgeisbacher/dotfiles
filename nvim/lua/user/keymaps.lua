@@ -10,6 +10,7 @@ keymap("", "<space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+keymap("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 --
 --
 --
