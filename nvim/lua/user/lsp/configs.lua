@@ -4,6 +4,7 @@ local servers = {
   "gopls",
   "lua_ls",
   "terraformls",
+  "templ",
 }
 
 for _, server in pairs(servers) do
@@ -17,3 +18,6 @@ for _, server in pairs(servers) do
   end
   lspconfig[server].setup(opts)
 end
+
+-- register file-extensions
+vim.filetype.add({ extension = { templ = "templ" } })

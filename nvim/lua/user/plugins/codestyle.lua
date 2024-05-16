@@ -17,6 +17,7 @@ return {
         graphql = { "prettier" },
         lua = { "stylua" },
         terraform = { "terraformls" },
+        templ = { "templ" },
       },
       format_on_save = {
         lsp_fallback = true,

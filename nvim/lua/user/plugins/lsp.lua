@@ -36,6 +36,7 @@ return {
         "stylua",
         "prettier",
         "terraformls",
+        "templ",
       },
     })
   end,
