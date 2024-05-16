@@ -24,8 +24,22 @@ async function getBranchName() {
   return output.stdout.split("\n")[0];
 }
 
+async function determineMainBranch() {
+  const output = await $`git branch -l`.quiet();
+  const branchLines = output.stdout.split("\n");
+  return (
+    [" develop", " main", " master"]
+      .find((branchName) =>
+        branchLines.some((branchLine) => branchLine.includes(branchName)),
+      )
+      .trim() || "main branch not detected"
+  );
+}
+
 await assertInGitWorktree();
 await assertCleanWorktree();
+const mainBranch = await determineMainBranch();
+console.log(`detected main branch: ${mainBranch}`);
 
 const branchName = await getBranchName();
 if (["develop", "master"].includes(branchName)) {
@@ -33,7 +47,7 @@ if (["develop", "master"].includes(branchName)) {
   process.exit(0);
 }
 
-await $`git checkout develop`;
+await $`git checkout ${mainBranch}`;
 await $`git fetch --prune`;
 await $`git pull --ff-only`;
 await $`git branch -D ${branchName}`;
