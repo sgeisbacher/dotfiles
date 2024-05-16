@@ -16,6 +16,7 @@ keymap("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 --
 --
 -- NORMAL MODE --
+keymap("n", "<leader>cc", ":copen<CR>", opts) -- open quickfix pane
 keymap("n", "<leader>ttc", ":cclose<CR>", opts) -- close tooltip pane
 keymap("n", "<m-o>", "<cmd>lua require('fzf-lua').files()<CR>", opts) -- open fuzzy file search
 -- keymap("n", "<leader>ff", "<cmd>lua require('fzf-lua').grep({ search = '', cmd = 'git grep --line-number --column --color=always' })<CR>", opts)
@@ -24,6 +25,8 @@ keymap("n", "<m-o>", "<cmd>lua require('fzf-lua').files()<CR>", opts) -- open fu
 --    -M 120 only indexes the first 120 chars of each line, so you get all those minified thousands of chars oneliners out of your index
 keymap("n", "<leader>ff", "<cmd>lua require('fzf-lua').grep({ search = '' })<CR>", opts)
 keymap("n", "<leader>fp", "<cmd>lua require('fzf-lua').resume()<CR>", opts)
+keymap("n", "<leader>xfp", "<cmd>lua require('fzf-lua').command_history()<CR>", opts)
+--keymap("n", "<leader>ffp", "<cmd>lua require('fzf-lua').resume()<CR>", opts)
 
 -- git
 keymap("n", "<leader>b", ":GitBlameToggle<CR>", opts)
