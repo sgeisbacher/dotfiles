@@ -10,6 +10,7 @@ $kubernetes\
 $nodejs\
 $cmd_duration $jobs $time\
 $line_break\
+$env_var\
 $directory\
 $character"""
 
@@ -21,6 +22,12 @@ format = "n:[($version )]($style)"
 
 [fill]
 symbol = " "
+
+[env_var]
+default = ''
+
+[env_var.STY]
+format = "[ SCREEN ]($style) "
 
 [directory]
 read_only = " "
