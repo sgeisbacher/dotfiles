@@ -32,6 +32,8 @@ keymap("n", "<leader>xfp", "<cmd>lua require('fzf-lua').command_history()<CR>", 
 keymap("n", "<leader>b", ":GitBlameToggle<CR>", opts)
 keymap("n", "<leader>bb", ":GitBlameOpenFileURL<CR>", opts)
 keymap("n", "<leader>hh", "<cmd>lua require('gitsigns').preview_hunk()<CR>", opts)
+keymap("n", "<leader>hr", "<cmd>lua require('gitsigns').reset_hunk()<CR>", opts)
+keymap("n", "<leader>hs", "<cmd>lua require('gitsigns').stage_hunk()<CR>", opts)
 keymap("n", "<leader>hn", "<cmd>lua require('gitsigns').nav_hunk('next')<CR>", opts)
 
 -- search
