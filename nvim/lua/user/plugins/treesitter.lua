@@ -13,6 +13,7 @@ return {
         "bash",
         "css",
         "dockerfile",
+        "dart",
         "gitignore",
         "go",
         "gomod",
