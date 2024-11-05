@@ -31,12 +31,14 @@ return {
       automatic_installation = true,
     })
 
+    -- see available list https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
     require("mason-tool-installer").setup({
       ensure_installed = {
         "stylua",
         "prettier",
         "terraformls",
         "templ",
+        "zls",
       },
     })
   end,
