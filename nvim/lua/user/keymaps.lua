@@ -27,6 +27,11 @@ keymap("n", "<leader>ff", "<cmd>lua require('fzf-lua').grep({ search = '' })<CR>
 keymap("n", "<leader>fp", "<cmd>lua require('fzf-lua').resume()<CR>", opts)
 keymap("n", "<leader>xfp", "<cmd>lua require('fzf-lua').command_history()<CR>", opts)
 --keymap("n", "<leader>ffp", "<cmd>lua require('fzf-lua').resume()<CR>", opts)
+-- DEBUGGER DAP --
+keymap("n", "<m-b>", "<cmd>lua require('dap').toggle_breakpoint()<cr>", opts)
+keymap("n", "<m-s>", "<cmd>lua require('dap').step_over()<cr>", opts)
+keymap("n", "<m-c>", "<cmd>lua require('dap').continue()<cr>", opts)
+keymap("n", "<m-d>", "<cmd>lua require('dapui').toggle()<cr>", opts)
 
 -- git
 keymap("n", "<leader>b", ":GitBlameToggle<CR>", opts)
