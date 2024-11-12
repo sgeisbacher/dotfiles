@@ -41,8 +41,6 @@ export PATH="$PATH:/sbin:/usr/local/bin:$HOME/bin"
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 export PATH="$HOME/Library/Python/3.8/bin:$PATH"
-export PATH="$HOME/.gem/ruby/2.3.0/bin:$PATH"
-export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 
@@ -163,3 +161,5 @@ export ANSIBLE_NOCOWS=1
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+eval "$(rbenv init - --no-rehash zsh)"
