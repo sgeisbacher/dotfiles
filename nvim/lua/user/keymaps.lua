@@ -26,6 +26,7 @@ keymap("n", "<m-o>", "<cmd>lua require('fzf-lua').files()<CR>", opts) -- open fu
 keymap("n", "<leader>ff", "<cmd>lua require('fzf-lua').grep({ search = '' })<CR>", opts)
 keymap("n", "<leader>fp", "<cmd>lua require('fzf-lua').resume()<CR>", opts)
 keymap("n", "<leader>xfp", "<cmd>lua require('fzf-lua').command_history()<CR>", opts)
+keymap("v", "<leader>r", 'hy:%s/<C-r>"//gc<left><left><left>', opts) --
 --keymap("n", "<leader>ffp", "<cmd>lua require('fzf-lua').resume()<CR>", opts)
 -- DEBUGGER DAP --
 keymap("n", "<m-b>", "<cmd>lua require('dap').toggle_breakpoint()<cr>", opts)
@@ -64,6 +65,8 @@ keymap("n", "<", "<C-w><", opts) -- shrink split pane
 
 -- navigation
 -- in buffer
+keymap("n", "<m-j>", "20jzz", opts) -- jump down 20 lines and center the line
+keymap("n", "<m-k>", "20kzz", opts) -- jump down 20 lines and center the line
 keymap("n", "[", "{", opts) -- jump one paragraph up
 keymap("n", "]", "}", opts) -- jump one paragraph down
 
@@ -99,3 +102,4 @@ keymap("v", "<Down>", "<nop>", opts)
 
 -- search
 keymap("v", "//", "y/\\V<C-R>=escape(@\",'/\\')<CR><CR>", opts) -- search for selected text
+keymap("v", "g//", "y/\\V<C-R>=escape(@\",'/\\')<CR><CR>", opts) -- search for selected text
