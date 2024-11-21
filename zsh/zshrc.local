@@ -18,6 +18,9 @@ complete -C '/opt/homebrew/share/zsh/site-functions/_colima' colima
 . ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 
+#  KEY BINDINGS
+bindkey '^w' forward-word # this is for autosuggestion to partly apply
+
 
 
 #  ENV_SHELL CONFIG
