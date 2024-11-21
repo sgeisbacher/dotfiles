@@ -31,6 +31,9 @@ gocover() { go test -v -coverprofile=/tmp/cover.out "$1" && go tool cover -html=
 #export NODE_PATH=`npm root -g`
 
 # PATH
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="$HOME/devtools/zig/current:$PATH"
+export PATH="$HOME/devtools/flutter/bin:$PATH"
 export PATH="/opt/homebrew/opt/node@12/bin:$PATH"
 GNUCOREUTILS="/opt/homebrew/opt/coreutils/libexec/gnubin"
 GNUBINUTILS="/opt/homebrew/opt/binutils/bin"
@@ -41,6 +44,7 @@ export PATH="$PATH:/sbin:/usr/local/bin:$HOME/bin"
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 export PATH="$HOME/Library/Python/3.8/bin:$PATH"
+export PATH="$HOME/.gem/ruby/3.3.0/bin:$PATH"
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 
