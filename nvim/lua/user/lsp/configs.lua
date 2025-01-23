@@ -3,6 +3,7 @@ local servers = {
   "tsserver",
   "gopls",
   "lua_ls",
+  "svelte",
   "terraformls",
   "templ",
   "zls",
