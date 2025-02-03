@@ -9,6 +9,7 @@ return {
         javascriptreact = { "prettier" },
         typescriptreact = { "prettier" },
         svelte = { "prettier" },
+        dart = { "dart_format" },
         css = { "prettier" },
         html = { "prettier" },
         json = { "prettier" },
@@ -23,6 +24,15 @@ return {
         lsp_fallback = true,
         async = false,
         timeout_ms = 500,
+      },
+      -- custom formatters
+      -- example:
+      formatters = {
+        -- dartfmt = {
+        --   inherit = false,
+        --   command = "dart",
+        --   args = { "format" },
+        -- },
       },
     })
   end,
