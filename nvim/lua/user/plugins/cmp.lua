@@ -49,6 +49,8 @@ return {
     local cmp = require("cmp")
     local luasnip = require("luasnip")
 
+    require("luasnip.loaders.from_lua").load({ paths = { "~/.config/nvim/lua/user/snippets" } })
+
     cmp.setup({
       snippet = {
         expand = function(args)
@@ -99,6 +101,7 @@ return {
           vim_item.menu = ({
             nvim_lsp = "[LSP]",
             nvim_lua = "[NVIM_LUA]",
+            luasnip = "[SNIP]",
             buffer = "[Buffer]",
             path = "[Path]",
           })[entry.source.name]
@@ -107,6 +110,7 @@ return {
       },
       sources = {
         { name = "nvim_lsp" },
+        { name = "luasnip" },
         { name = "nvim_lua" },
         { name = "buffer" },
         { name = "path" },
