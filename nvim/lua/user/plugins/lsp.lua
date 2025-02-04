@@ -34,6 +34,7 @@ return {
     -- see available list https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
     require("mason-tool-installer").setup({
       ensure_installed = {
+        "dart-debug-adapter",
         "stylua",
         "prettier",
         "terraformls",
