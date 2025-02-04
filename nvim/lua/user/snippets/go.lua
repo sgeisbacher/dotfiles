@@ -10,4 +10,5 @@ return {
   s("ierrlog", { t({ "if err != nil {", "\tlog.error(err)", "}" }) }),
   s("ierrpanic", { t({ "if err != nil {", "\tpanic(err)", "}" }) }),
   s("ierrret", { t({ "if err != nil {", "\treturn " }), i(1, "nil"), t({ ", err", "}" }) }),
+  s("fori", { t("for i := 0; i < "), i(1, "10"), t({ "; i++ {", "" }), i(2), t({ "", "}" }) }),
 }
