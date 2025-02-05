@@ -1,6 +1,6 @@
 local lspconfig = require("lspconfig")
 local servers = {
-  "tsserver",
+  "ts_ls",
   "gopls",
   "lua_ls",
   "svelte",

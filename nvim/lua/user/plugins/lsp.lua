@@ -35,6 +35,7 @@ return {
     require("mason-tool-installer").setup({
       ensure_installed = {
         "dart-debug-adapter",
+        "ts_ls",
         "stylua",
         "prettier",
         "terraformls",
