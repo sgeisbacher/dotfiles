@@ -78,3 +78,5 @@ true
 eval "$(starship init zsh)"
 
 alias starship-aws-login="zx /Users/sgeisbac/code/business/starshiphsa/starship-tools/aws-starship-login.mjs"
+
+eval "$(zoxide init zsh)"

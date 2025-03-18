@@ -54,6 +54,7 @@ export ANSIBLE_ROLES_PATH="/etc/ansible/roles:~/.ansible/roles"
 # export PATH=$(pyenv root)/shims:$PATH
 
 # ALIASES
+alias cd='z'
 alias reload_zsh='source $HOME/.zshrc'
 alias 1pwd='gopass show -c 1pwd-masterpwd && open /Applications/1Password\ 7.app'
 alias onepwd='1pwd'
