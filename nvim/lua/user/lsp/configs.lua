@@ -3,6 +3,7 @@ local servers = {
   "ts_ls",
   "gopls",
   "lua_ls",
+  "omnisharp",
   "svelte",
   "terraformls",
   "templ",

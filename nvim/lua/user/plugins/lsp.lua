@@ -35,12 +35,14 @@ return {
     require("mason-tool-installer").setup({
       ensure_installed = {
         "dart-debug-adapter",
+        "omnisharp",
         "ts_ls",
         "stylua",
         "prettier",
         "terraformls",
         "templ",
         "zls",
+        "csharpier",
       },
     })
   end,

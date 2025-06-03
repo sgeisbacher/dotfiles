@@ -9,8 +9,9 @@ return {
         javascriptreact = { "prettier" },
         typescriptreact = { "prettier" },
         svelte = { "prettier" },
-        dart = { "dart_format" },
+        -- dart = { "dartfmt" },
         css = { "prettier" },
+        cs = { "csharpier" },
         html = { "prettier" },
         json = { "prettier" },
         yaml = { "prettier" },
@@ -29,10 +30,20 @@ return {
       -- example:
       formatters = {
         -- dartfmt = {
-        --   inherit = false,
         --   command = "dart",
-        --   args = { "format" },
+        --   args = function(ctx)
+        --     return { "format" }
+        --   end,
+        --   stdin = true,
+        --   post_hook = function(ctx)
+        --     vim.cmd("edit!") -- force reload the file from disk
+        --   end,
         -- },
+        csharpier = {
+          command = "csharpier",
+          args = { "format", "--write-stdout" },
+          stdin = true,
+        },
       },
     })
   end,
