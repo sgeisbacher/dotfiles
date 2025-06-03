@@ -31,6 +31,7 @@ gocover() { go test -v -coverprofile=/tmp/cover.out "$1" && go tool cover -html=
 #export NODE_PATH=`npm root -g`
 
 # PATH
+export PATH="$HOME/.dotnet/tools:$PATH"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export PATH="$HOME/devtools/zig/current:$PATH"
 export PATH="$HOME/devtools/flutter/bin:$PATH"
@@ -47,6 +48,7 @@ export PATH="$HOME/Library/Python/3.8/bin:$PATH"
 export PATH="$HOME/.gem/ruby/3.3.0/bin:$PATH"
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
 # MISC CODING STUFF
 export REACT_DEVTOOLS_PATH="/Users/stefan/Library/Application Support/Google/Chrome/Default/Extensions/fmkadmapgofadopljbjfkapdkoienihi/2.5.0_0"
@@ -64,6 +66,7 @@ alias nvimrc='cd $HOME/.config/nvim/ && nvim'
 alias zshrc='vim $HOME/.zshrc.local'
 alias profile='vim $HOME/.profile'
 alias gst="git status -sb"
+alias gff="git pull --ff-only"
 alias gdev="git checkout develop"
 alias gfetch="git fetch --prune"
 alias gpull="git pull --ff-only"
@@ -99,7 +102,7 @@ brew_version() {
     brew info --json $1 | jq -r '.[].versioned_formulae[]'
 }
 
-alias restic_nas='restic -r sftp:fileserver.grz:/srv/storage/fileserver/restic/stefan -p ~/.restic-passwd'
+alias restic_nas='restic -r sftp:stefan@vhost.intra.sgeisbacher.net:/srv/storage/fileserver/bkp-stefan'
 alias restic_htz='restic -r sftp:u151603@u151603.your-storagebox.de:stefan -p ~/.restic-passwd'
 alias restic_aws='AWS_ACCESS_KEY_ID=${RESTIC_AWS_ACCESS_KEY_ID} AWS_SECRET_ACCESS_KEY=${RESTIC_AWS_SECRET_ACCESS_KEY} restic -r s3:https://s3.amazonaws.com/sgeisbacher-bkp/restic -p ~/.restic-passwd'
 alias restic_franz='eval $(gopass network/restic/franz-cmd)'
@@ -140,14 +143,24 @@ x () {
      fi
 }
 
-# MISC
-echo "checking for ssh-key..."
-if [[ -f "$HOME/.ssh/id_rsa_privateservers" ]]; then
-	if ! (ssh-add -l | grep -q 'privateservers') ; then
-		echo "adding id_rsa_privateservers to ssh-agent ..."
-		ssh-add ~/.ssh/id_rsa_privateservers
-	fi
+# --- SSH
+alias loadsshkeys='ssh-add -t 600 ~/.ssh/id_ed25519'
+alias sshlegacy='ssh -i ~/.ssh/archive/id_rsa_privateservers'
+alias sshlegacy2='ssh -i ~/.ssh/archive/id_rsa'
+# Start ssh-agent if not running
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+  eval "$(ssh-agent -s)"
 fi
+# echo "checking for ssh-key..."
+# if [[ -f "$HOME/.ssh/id_ed25519" ]]; then
+# 	if ! (ssh-add -l | grep -q 'ED25519') ; then
+# 		echo "adding id_ed25519 to ssh-agent ..."
+#         # Add key with timeout (600 seconds = 10 minutes)
+#         ssh-add -t 600 ~/.ssh/id_ed25519 
+# 	fi
+# fi
+
+# --- MISC
 export TERM=xterm-256color
 export ANSIBLE_NOCOWS=1
 
@@ -167,4 +180,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-eval "$(rbenv init - --no-rehash zsh)"
+# TODO FIX
+#eval "$(rbenv init - --no-rehash zsh)"
+export GEM_HOME="$HOME/.gem"
+export GEM_PATH="$HOME/.gem"
